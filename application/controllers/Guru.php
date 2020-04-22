@@ -123,7 +123,7 @@ class Guru extends CI_Controller {
 		
 		$this->db->limit(1);
 		$data['riwayat'] = $this->db->get_where('nilai_kelas10', ['upload_by' => $data['user']['name']])->result_array();
-		$data['status'] = $this->SiswaModel->status();
+	
 		$this->load->view('templates/header', $data);
 		$this->load->view('templates/sidebar', $data);
 		$this->load->view('templates/topbar', $data);

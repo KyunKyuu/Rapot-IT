@@ -12,12 +12,12 @@
 
             <div class="card-header py-3">
            <?= form_error('siswa', '<div class="alert alert-danger" role="alert">','</div>');  ?>
-            	<?= $this->session->flashdata('message'); ?>
-                <div class="btn btn-danger btn-icon-split">
+              <?= $this->session->flashdata('message'); ?>
+                <div class="btn btn-success btn-icon-split">
                     <span class="icon text-white-50">
                       <i class="fas fa-fw fa-users"></i>
                     </span>
-                    <span class="text"><strong><?= $title; ?></strong></span>
+                     <span class="text"><strong><?= $role['role']; ?></strong></span>
                   </div>
             </div>
             <div class="card-body">
@@ -26,36 +26,39 @@
                   <thead>
                     <tr>
                       <th>#</th>
-                      <th>Name</th>
-                      <th>Nis</th>
-                      <th>Kelas</th>
-                      <th>Date Created</th>
-                    
+                      <th>Nama</th>
+                      <th>Email</th>
+                      
+                      <th>Action</th>
+                 
                       
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
-                      <th>#</th>
-                      <th>Name</th>
-                      <th>Nis</th>
-                      <th>Kelas</th>
-                      <th>Date Created</th>
-                 
+                    <th>#</th>
+                      <th>Nama</th>
+                      <th>Email</th>
+                     
+                      <th>Action</th>
+                
                       
                       
                     </tr>
                   </tfoot>
                   <tbody>
-                  	<?php $i=1; ?>
-                  	<?php foreach($siswa as $sw) : ?>
+                    <?php $i=1; ?>
+                    <?php foreach($profile as $m) : ?>
                     <tr>
                       <td><?= $i++; ?></td>
-                      <td><?= $sw['name']; ?></td>
-                      <td><?= $sw['nisnip']; ?></td>
-                      <td><?= $sw['kelas']; ?>-<?= $sw['jurusan']; ?></td>
-                      <td><?= date('d F Y', $sw['date_created']); ?></td>
-                      
+                      <td><?= $m['name']; ?></td>
+                     
+                      <td><?= $m['nisnip']; ?></td>
+                      <td>
+                        <a href="<?= base_url('admin/detail/') . $m['id'] ?>" class="btn btn-primary btn-sm">Detail</a>
+                         <a onclick="javascript: return confirm('Anda Yakin hapus?')" href="<?= base_url('admin/hapus/') . $m['id'] ?>" class="btn btn-danger btn-sm">Hapus</a>
+                          
+                      </td>
                      
                     </tr>
                 <?php endforeach; ?>
@@ -70,7 +73,6 @@
       <!-- End of Main Content -->
 
       <!-- Button trigger modal -->
-
 
 </div>
 

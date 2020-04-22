@@ -23,6 +23,7 @@
    <link rel="stylesheet" type="text/css" href="<?= base_url('assets');?>/css/style1.css">
      <link href="<?= base_url('assets')?>/vendor/fontawesome-free/css/style3.css" rel="stylesheet" type="text/css">
      <link href="<?= base_url('assets') ?>/css/pilihan_input.css" rel="stylesheet">
+     <link href="<?= base_url('assets') ?>/css/admin.css" rel="stylesheet">
 </head>
 
 <body id="page-top">

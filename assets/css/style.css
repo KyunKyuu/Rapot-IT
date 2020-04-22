@@ -100,3 +100,10 @@ body {
     margin-bottom: -15%;
     color: #495057;
 }
+
+.admin
+{
+    position: absolute;
+    top: -50px;
+    transform: translate(50%);
+}

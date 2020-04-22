@@ -8,9 +8,24 @@
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800"><?= $title; ?></h1>
-            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+            
           </div>
+          <br/>
+          <div class="row">
 
+             <div class="col-md shadow" style="background-color: white;">
+            <image src="<?= base_url('assets/img/admin.png'); ?>" class="admin" />
+           </div>
+            <div class="col-md shadow" style="background-color: white;">
+              <br/>
+              <h1>Welcomee Back Admin</h1>
+              <br>
+              <p>Halo <strong><?= $user['name']; ?></strong> senang melihat anda kembali</p>
+            </div>
+          
+           </div>
+
+           <br/>
           <!-- Content Row -->
           <div class="row">
 
@@ -93,7 +108,7 @@
           </div>
         </div>
         <!-- /.container-fluid -->
-        <div class="alert alert-success shadow" role="alert"><h4 class="alert-headimg">Selamat Datang!</h4><p>Selamat Datang <strong><?= $user['name']; ?></strong> </p>  </div>
+     
      
       </div>
       <!-- End of Main Content -->

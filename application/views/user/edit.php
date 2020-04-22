@@ -35,7 +35,7 @@
                 <label for="kelas" class="col-sm-2 col-form-label" >Kelas</label>
                 <div class="col-sm-10">
                 <select class="form-control" name="kelas" id="kelas" value="<?= $user['kelas']; ?>">
-                   <option class="hidden"  selected disabled>Pilih Kelas</option>
+                   <option class="hidden" selected><?= $user['kelas']; ?></option>
                         <option>X</option>
                         <option>XI</option>
                         <option>XII</option>

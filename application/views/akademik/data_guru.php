@@ -72,29 +72,6 @@
       <!-- Button trigger modal -->
 
 
-<div class="modal fade" id="siswaModal" tabindex="-1" role="dialog" aria-labelledby="siswaModal" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="MenuModal"> Edit Data Siswa</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form action="<?= base_url('data_guru') ?>" method="post">
-          <input type="hidden" name="id" id="id">
-        	<div class="form-group">
-        		<label for="menu">Menu</label>
-        		<input type="text" name="menu" class="form-control" id="menu">
-        		
-        	</div>
-
-       </form>
-    </div>
-  </div>
-</div>
-</div>
 </div>
 
 

@@ -68,4 +68,51 @@ class Admin extends CI_Controller {
 		redirect('admin/role');
 	}
 
+	public function data()
+	{
+		$data['title']= "Edit Data";
+		$data['user'] = $this->user_model->ambil_data($this->session->userdata['email']);
+		$data['role'] = $this->db->get('user_role')->result_array();
+		$this->load->view('templates/header', $data);
+		$this->load->view('templates/sidebar', $data);
+		$this->load->view('templates/topbar', $data);
+		$this->load->view('admin/profile', $data);
+		$this->load->view('templates/footer');
+	}
+
+	public function tabeldata($role_id)
+	{
+		$data['title']= "Data Profile";
+		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+		$data['role'] = $this->db->get_where('user_role', ['id' => $role_id])->row_array();
+		$data['profile'] = $this->db->get_where('user', ['role_id' => $role_id])->result_array();	
+		$this->load->view('templates/header', $data);
+		$this->load->view('templates/sidebar', $data);
+		$this->load->view('templates/topbar', $data);
+		$this->load->view('admin/tabelprofile', $data);
+		$this->load->view('templates/footer');
+	}
+
+	public function detail($id)
+	{
+		$data['title']= "Detail Profile";
+		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+		$data['role'] = $this->db->get_where('user_role', ['id' => $id])->result_array();
+		$data['data'] = $this->db->get_where('user', ['id' => $id])->row_array();
+		$this->load->view('templates/header', $data);
+		$this->load->view('templates/sidebar', $data);
+		$this->load->view('templates/topbar', $data);
+		$this->load->view('admin/detail', $data);
+		$this->load->view('templates/footer');
+	}
+
+	public function hapus($id)
+	{
+		$this->db->delete('user', ['id' => $id]);
+		$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data berhasil dihapus.</div>');
+			redirect('admin/data');
+	}
+
+	
+
 }

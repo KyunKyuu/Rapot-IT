@@ -22,10 +22,13 @@
             <div class="form-group row">
             <label for="menu_id" class="col-sm-2 col-form-label" >Select Menu</label>
             <div class="col-sm-10">
-            <select name="menu_id" id="menu_id" class="form-control"> 
+            <select name="menu_id" id="menu_id" class="form-control">
+             
                <option class="">Select Menu</option>
+
               <?php foreach ($menu as $m) :?>
-                <option value="<?= $m['id']; ?>"><?= $m['menu']; ?></option>
+
+            <option value="<?= $m['id']; ?>"><?= $m['menu']; ?></option>
               <?php endforeach; ?>
             </select>
           </div>
